@@ -59,6 +59,7 @@ This project solves all four of those problems in one place — so you can skip 
 ---
 
 ## 🛠️ Tech Stack
+<div align="center">
 
 ### Framework and Language
 ![Next.js](https://img.shields.io/badge/Next.js_14-black?style=for-the-badge&logo=next.js)
