@@ -17,7 +17,7 @@ export default async function DashboardPage() {
       {/* Header */}
       <div style={{ marginBottom: '32px' }}>
         <h1 style={{ fontSize: '28px', fontWeight: '700', color: '#0f172a', margin: '0 0 8px' }}>
-          Good day, {session?.user?.name?.split(' ')[0]} 👋
+          Welcome back, {session?.user?.name?.split(' ')[0]} 
         </h1>
         <p style={{ color: '#64748b', fontSize: '15px', margin: 0 }}>
           Here's what's happening with your organizations.
