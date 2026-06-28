@@ -13,9 +13,9 @@ export default async function DashboardLayout({
   if (!session) redirect('/login')
 
   return (
-    <div className="flex h-screen bg-gray-950">
+    <div style={{ display: 'flex', minHeight: '100vh', background: '#f8fafc', fontFamily: 'system-ui, sans-serif' }}>
       <Sidebar user={session.user} />
-      <main className="flex-1 overflow-y-auto p-8">
+      <main style={{ flex: 1, padding: '40px', overflowY: 'auto' }}>
         {children}
       </main>
     </div>

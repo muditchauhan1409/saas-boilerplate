@@ -22,9 +22,19 @@ export default function BillingButton({ orgId }: { orgId: string }) {
     <button
       onClick={handleUpgrade}
       disabled={loading}
-      className="w-full py-2.5 bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium rounded-lg transition disabled:opacity-50"
+      style={{
+        padding: '12px 28px',
+        background: 'white',
+        border: 'none', borderRadius: '10px',
+        color: '#7c3aed', fontSize: '14px', fontWeight: '700',
+        cursor: loading ? 'not-allowed' : 'pointer',
+        opacity: loading ? 0.7 : 1,
+        boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+        transition: 'all 0.2s',
+        display: 'inline-flex', alignItems: 'center', gap: '8px'
+      }}
     >
-      {loading ? 'Redirecting...' : 'Upgrade to Pro'}
+      {loading ? 'Redirecting...' : ' Upgrade to Pro'}
     </button>
   )
 }

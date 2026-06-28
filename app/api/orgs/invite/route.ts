@@ -8,7 +8,13 @@ export async function POST(req: Request) {
   const session = await getServerSession(authOptions)
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { email, orgId } = await req.json()
+  const body = await req.json()
+  const { email, orgId } = body
+
+  console.log('Invite request:', { email, orgId })
+
+  if (!email || !orgId)
+    return NextResponse.json({ error: 'Email and orgId are required' }, { status: 400 })
 
   const adminCheck = await prisma.member.findFirst({
     where: { userId: session.user.id, orgId, role: 'ADMIN' },
