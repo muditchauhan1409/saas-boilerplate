@@ -42,7 +42,7 @@ export default async function AIInsightsPage() {
   })
 
   const totalOrgs = memberships.length
-  const highRisk = memberships.filter(m => {
+  const highRisk = memberships.filter((m: typeof memberships[number]) => {
     const plan = m.org.subscription?.plan || 'FREE'
     const days = Math.floor((Date.now() - m.org.createdAt.getTime()) / (1000 * 60 * 60 * 24))
     return plan === 'FREE' && days > 7
