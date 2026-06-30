@@ -93,7 +93,7 @@ export default async function AIInsightsPage() {
       </h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {memberships.map(({ org }) => {
+        {memberships.map(({ org }: typeof memberships[number]) => {
           const plan = org.subscription?.plan || 'FREE'
           const memberCount = org.members.length
           const churn = getChurnRisk(plan, org.createdAt, memberCount)
