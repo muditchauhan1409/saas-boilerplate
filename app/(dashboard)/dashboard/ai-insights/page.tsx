@@ -65,7 +65,7 @@ export default async function AIInsightsPage() {
         {[
           { label: 'Organizations Tracked', value: totalOrgs, icon: '🏢', color: '#8b5cf6', bg: '#f3f0ff' },
           { label: 'High Churn Risk', value: highRisk, icon: '⚠️', color: '#ef4444', bg: '#fef2f2' },
-          { label: 'Upsell Opportunities', value: memberships.filter(m => getUpsellSignal(m.org.subscription?.plan || 'FREE', m.org.members.length)).length, icon: '💡', color: '#f59e0b', bg: '#fffbeb' },
+          { label: 'Upsell Opportunities', value: memberships.filter((m: typeof memberships[number]) => getUpsellSignal(m.org.subscription?.plan || 'FREE', m.org.members.length)).length, icon: '💡', color: '#f59e0b', bg: '#fffbeb' },
         ].map(stat => (
           <div key={stat.label} style={{
             background: 'white', borderRadius: '16px',
